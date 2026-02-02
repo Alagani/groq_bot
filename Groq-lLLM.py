@@ -4,7 +4,7 @@ from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
+print("hello",os.environ.get("GROQ_API_KEY"))
 # Initialize LLM
 llm = ChatGroq(
     model="llama-3.1-8b-instant",
@@ -14,8 +14,8 @@ llm = ChatGroq(
 )
 
 # Streamlit UI
-st.set_page_config(page_title="CHATBOT")
-st.title("AI CHATBOT 💬")
+st.set_page_config(page_title="AI")
+st.markdown("<h1 style='text-align: center;'>JAGA AI 💬</h1>", unsafe_allow_html=True)
 
 # Create system prompt FIRST
 system_prompt = SystemMessage(content="""
